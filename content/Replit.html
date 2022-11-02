@@ -2,7 +2,7 @@
         <head>
         <title>cmsite</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -141,8 +141,23 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='W3.html'>Next</a> >> W3<br /><h1>各週整理</h1>
-<br />About << <a href='About.html'>Previous</a> <a href='W3.html'>Next</a> >> W3</div>
+    <div id="tipue_search_content">W3 << <a href='W3.html'>Previous</a> <a href='網頁與倉儲.html'>Next</a> >> 網頁與倉儲<br /><h1>Replit</h1>
+<p>Replit是一個線上開發集成的服務，簡單來說就是把原本近端的推送轉移至遠端進行，因此只要有倉儲、權限，就能在網路上直接進行課程網頁的改版，而免費使用者擁有500MB的限制。</p>
+<p>利用Replit進行遠端改版步驟:</p>
+<ol>
+<li>建立Replit帳號</li>
+<li>找到自己課程網頁的倉儲並複製url</li>
+<li>點選Create，貼上url，Language選python(課程網頁檔案是python寫的)</li>
+<li>從右側欄位開啟Shell(遠端主機是Linux，要以Linux語法下command)</li>
+<li>利用git指令將子模組(可視作引擎)抓下來<br/>
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">git submodule update --init --recursive</pre>
+<p>--init:初始化   --recursive:以遞迴方式抓所有東西</p>
+</li>
+<li>下載python套件管理工具(因為是在遠端執行)<br/>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">pip install flask flask_cors bs4 lxml pelican markdown gevent</pre>
+</li>
+<li>環境設定完成後，按Run執行，並複製網址執行動態網頁</li>
+</ol><br />W3 << <a href='W3.html'>Previous</a> <a href='網頁與倉儲.html'>Next</a> >> 網頁與倉儲</div>
         
     <!-- footer -->
       <div class="container">

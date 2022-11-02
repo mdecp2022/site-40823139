@@ -4,7 +4,23 @@
 <h1>各週整理</h1>
 <h2>W3</h2>
 <p>本週核心:了解基本的環境架構及倉儲系統的運作</p>
-<h3>網頁與倉儲</h3>
+<h3>Replit</h3>
+<p>Replit是一個線上開發集成的服務，簡單來說就是把原本近端的推送轉移至遠端進行，因此只要有倉儲、權限，就能在網路上直接進行課程網頁的改版，而免費使用者擁有500MB的限制。</p>
+<p>利用Replit進行遠端改版步驟:</p>
+<ol>
+<li>建立Replit帳號</li>
+<li>找到自己課程網頁的倉儲並複製url</li>
+<li>點選Create，貼上url，Language選python(課程網頁檔案是python寫的)</li>
+<li>從右側欄位開啟Shell(遠端主機是Linux，要以Linux語法下command)</li>
+<li>利用git指令將子模組(可視作引擎)抓下來<br/>
+<pre class="brush:bash;auto-links:false;toolbar:false" contenteditable="false">git submodule update --init --recursive</pre>
+<p>--init:初始化   --recursive:以遞迴方式抓所有東西</p>
+</li>
+<li>下載python套件管理工具(因為是在遠端執行)<br/>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">pip install flask flask_cors bs4 lxml pelican markdown gevent</pre>
+</li>
+<li>環境設定完成後，按Run執行，並複製網址執行動態網頁</li>
+</ol><h3>網頁與倉儲</h3>
 <p><strong>網頁的誕生</strong></p>
 <p>一個基本的網頁架構由以下三者構成</p>
 <ol>
@@ -31,7 +47,8 @@
 <p><a href="/get_page/%E7%B6%B2%E9%A0%81%E8%88%87%E5%80%89%E5%84%B2/網站原理 (3)：網站是怎麼構成的？ – 淺談網站的3大要素：UI/UX設計師 前端工程師 後端工程師">網站原理 (3)：網站是怎麼構成的？ – 淺談網站的3大要素：UI/UX設計師 前端工程師 後端工程師</a></p>
 <p></p>
 <p></p><h3>CMD命令提示字元</h3>
-<p>在計算機程式中將大量運用到CMD啟動近端資料夾的引擎，CMD即命令提示字元(command縮寫)，該工具就是所謂的Shell(殼層)。所謂的Shell是指<span>「為使用者提供使用者介面」的軟體，為User跟System溝通的橋樑(否則人類沒辦法直接跟電腦溝通)，而我們在Windows開啟檔案時大多是到檔案總管中點擊圖示開啟檔案，這樣的圖形化介面(GUI)能供使用者更直覺的使用(不用記命令)，但使用CMD仍有不少好處，如有效率的達到目的、節省電腦資源、到其他環境(比如其他人的電腦)不用花太長時間了解新GUI...。因此高效與易用將成為使用者的抉擇點。而CMD還有以下特點:</span></p>
+<p>在計算機程式中將大量運用到CMD啟動近端資料夾的引擎，CMD即命令提示字元(command縮寫)，該工具就是所謂的Shell(殼層)。</p>
+<p>所謂的Shell是指<span>「為使用者提供使用者介面」的軟體，為User跟System溝通的橋樑(否則人類沒辦法直接跟電腦溝通)，而我們在Windows開啟檔案時大多是到檔案總管中點擊圖示開啟檔案，這樣的圖形化介面(GUI)能供使用者更直覺的使用(不用記命令)，但使用CMD仍有不少好處，如有效率的達到目的、節省電腦資源、到其他環境(比如其他人的電腦)不用花太長時間了解新GUI...。因此高效與易用將成為使用者的抉擇點。而CMD還有以下特點:</span></p>
 <ol>
 <li><span>指令不分大小寫</span></li>
 <li><span>我(使用者)下"命令"電腦做"提示"</span></li>
