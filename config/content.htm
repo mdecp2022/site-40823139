@@ -20,7 +20,8 @@
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">pip install flask flask_cors bs4 lxml pelican markdown gevent</pre>
 </li>
 <li>環境設定完成後，按Run執行，並複製網址執行動態網頁</li>
-</ol><h3>網頁與倉儲</h3>
+</ol>
+<h3>網頁與倉儲</h3>
 <p><strong>網頁的誕生</strong></p>
 <p>一個基本的網頁架構由以下三者構成</p>
 <ol>
@@ -46,7 +47,8 @@
 <p><a href="https://jimmyswebnote.com/static-web-pages-vs-dynamic-web-pages/">網站原理 (4)：什麼是靜態網頁？什麼是動態網頁？兩者有什麼差別？</a></p>
 <p><a href="/get_page/%E7%B6%B2%E9%A0%81%E8%88%87%E5%80%89%E5%84%B2/網站原理 (3)：網站是怎麼構成的？ – 淺談網站的3大要素：UI/UX設計師 前端工程師 後端工程師">網站原理 (3)：網站是怎麼構成的？ – 淺談網站的3大要素：UI/UX設計師 前端工程師 後端工程師</a></p>
 <p></p>
-<p></p><h3>CMD命令提示字元</h3>
+<p></p>
+<h3>CMD命令提示字元</h3>
 <p>在計算機程式中將大量運用到CMD啟動近端資料夾的引擎，CMD即命令提示字元(command縮寫)，該工具就是所謂的Shell(殼層)。</p>
 <p>所謂的Shell是指<span>「為使用者提供使用者介面」的軟體，為User跟System溝通的橋樑(否則人類沒辦法直接跟電腦溝通)，而我們在Windows開啟檔案時大多是到檔案總管中點擊圖示開啟檔案，這樣的圖形化介面(GUI)能供使用者更直覺的使用(不用記命令)，但使用CMD仍有不少好處，如有效率的達到目的、節省電腦資源、到其他環境(比如其他人的電腦)不用花太長時間了解新GUI...。因此高效與易用將成為使用者的抉擇點。而CMD還有以下特點:</span></p>
 <ol>
@@ -61,7 +63,8 @@
 </ol>
 <p>資料補充:</p>
 <p><a href="https://ithelp.ithome.com.tw/articles/10276426">命令提示字元--CMD那麼好用你不學一下嗎?</a></p>
-<p><a href="https://yuhantaiwan.coderbridge.io/2020/06/14/%E7%AD%86%E8%A8%98-CommandLine%E8%B6%85%E6%96%B0%E6%89%8B%E5%85%A5%E9%96%80/">Command Line 超新手入門</a></p><h2>W4</h2>
+<p><a href="https://yuhantaiwan.coderbridge.io/2020/06/14/%E7%AD%86%E8%A8%98-CommandLine%E8%B6%85%E6%96%B0%E6%89%8B%E5%85%A5%E9%96%80/">Command Line 超新手入門</a></p>
+<h2>W4</h2>
 <h2>W5</h2>
 <h2>W6</h2>
 <p>本週核心:可攜系統建立與抽點程式說明</p>
@@ -92,6 +95,134 @@ num = 5
 # 利用 for 重複迴圈與 range() 變數, 列印出 (利用 print() 函式) 已經隨機排列次序的 stud 數列的最前面 num 個學號值
 for i in range(num):
     print(stud[i])</pre>
+<h3>執行</h3>
+<p>w6抽點程式:</p>
+<p><button id="w6_random">w6_random</button></p>
+<p>將 iterable 與 iterator <a href="https://home.gamer.com.tw/creationDetail.php?sn=4337438">相關說明</a>, 利用 Brython 與 Ace Editor 整理在這個頁面.</p>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
+}
+</script>
+</p>
+<p><!-- 導入 FileSaver 與 filereader --></p>
+<p>
+<script src="/static/ace/FileSaver.min.js" type="text/javascript"></script>
+<script src="/static/ace/filereader.js" type="text/javascript"></script>
+</p>
+<p><!-- 導入 ace --></p>
+<p>
+<script src="/static/ace/ace.js" type="text/javascript"></script>
+<script src="/static/ace/ext-language_tools.js" type="text/javascript"></script>
+<script src="/static/ace/mode-python3.js" type="text/javascript"></script>
+<script src="/static/ace/snippets/python.js" type="text/javascript"></script>
+</p>
+<p><!-- 導入 gearUtils-0.9.js Cango 齒輪繪圖程式庫 -->
+<script src="/static/Cango-24v03-min.js"></script>
+<script src="/static/gearUtils-09.js"></script>
+<script src="/static/SVGpathUtils-6v03-min.js"></script>
+<script src="/static/sylvester.js"></script>
+<script src="/static/PrairieDraw.js"></script>
+</p>
+<p><!-- 請注意, 這裡使用 Javascript 將 localStorage["kw_py_src1"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
+<p>
+<script type="text/javascript">
+function doSave(storage_id, filename){
+    var blob = new Blob([localStorage[storage_id]], {type: "text/plain;charset=utf-8"});
+    filename = document.getElementById(filename).value
+    saveAs(blob, filename+".py");
+}
+</script>
+</p>
+<p>
+<script type="text/python3">
+from browser import document as doc
+import ace
+# 清除畫布
+def clear_bd1(ev):
+    bd = doc["brython_div1"]
+    bd.clear()
+Ace1 = ace.Editor(editor_id="kw_editor1", console_id="kw_console1", container_id="kw__container1", storage_id="kw_py_src1" )
+# 從 gist 取出程式碼後, 放入 editor 作為 default 程式
+def run1():
+    # 利用 get 取下 src 變數值
+    try:
+        url = doc.query["src"]
+    except:
+        url = "https://gist.githubusercontent.com/mdecourse/0229a8a017091476a79700b8a190f185/raw/c3a6deaf717f8f2739a4b1392a5ab10936e9693a/from_1_add_to_10_1.py"
+    prog = open(url).read()
+
+    # 將程式載入編輯區
+    Ace1.editor.setValue(prog)
+    Ace1.editor.scrollToRow(0)
+    Ace1.editor.gotoLine(0)
+    # 直接執行程式
+    #ns = {'__name__':'__main__'}
+    #exec(prog, ns)
+    # 按下 run 按鈕
+    Ace1.run()
+
+# 執行程式, 顯示輸出結果與清除輸出結果及對應按鈕綁定
+doc['kw_run1'].bind('click', Ace1.run)
+doc['kw_show_console1'].bind('click', Ace1.show_console)
+doc['kw_clear_console1'].bind('click', Ace1.clear_console)
+doc['clear_bd1'].bind('click', clear_bd1)
+# 呼叫函式執行
+run1()
+</script>
+</p>
+<p><!-- add 1 to 100 開始 -->
+<script type="text/python3">
+from browser import document as doc
+import ace
+
+# 清除畫布
+def clear_bd1(ev):
+    bd = doc["brython_div1"]
+    bd.clear()
+
+# 利用 ace 中的 Editor 建立 Ace2 物件, 其中的輸入變數分別對應到頁面中的編輯區物件
+Ace2 = ace.Editor(editor_id="kw_editor1", console_id="kw_console1", container_id="kw__container1", storage_id="kw_py_src1" )
+
+add1to100_url = "https://gist.githubusercontent.com/mdecourse/0229a8a017091476a79700b8a190f185/raw/c48e37714f055c3a0027cbfef59e442a6ef659b9/from_1_add_to_100_1.py"
+
+# 從 gist 取得程式碼
+add_src = open(add1to100_url).read()
+def add(ev):
+    Ace2.editor.setValue(add_src)
+    Ace2.editor.scrollToRow(0)
+    Ace2.editor.gotoLine(0)
+    Ace2.run()
+
+# id 為 "add1to100" 的按鈕點按時, 執行 add 方法
+doc["add1to100"].bind('click', add)
+</script>
+</p>
+<p><!-- add 1 to 100 結束--></p>
+<!-- editor1 開始 -->
+<p><!-- 用來顯示程式碼的 editor 區域 --></p>
+<div id="kw_editor1" style="width: 600px; height: 300px;"></div>
+<p><!-- 以下的表單與按鈕與前面的 Javascript doSave 函式以及 FileSaver.min.js 互相配合 --></p>
+<p><!-- 存擋表單開始 --></p>
+<form><label>Filename: <input id="kw_filename" placeholder="input file name" type="text"/>.py</label> <input onclick="doSave('kw_py_src1', 'kw_filename1');" type="submit" value="Save"/></form>
+<p><!-- 存擋表單結束 --></p>
+<p></p>
+<p><!-- 執行與清除按鈕開始 --></p>
+<p><button id="kw_run1">Run</button> <button id="kw_show_console1">Output</button> <button id="kw_clear_console1">清除輸出區</button><button id="clear_bd1">清除繪圖區</button><button onclick="window.location.reload()">Reload</button></p>
+<p><!-- 執行與清除按鈕結束 --></p>
+<p></p>
+<p><!-- 程式執行 ouput 區 --></p>
+<div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console1"></textarea></div>
+<p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
+<div id="brython_div1"></div>
+<!-- editor1 結束 --><hr/><!-- ########################################## -->
 <p></p><h2>W7</h2>
 <h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
