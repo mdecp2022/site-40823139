@@ -1095,7 +1095,7 @@ brython({debug:1, pythonpath:['/static/','/downloads/py/']});
 <script type="text/python">
 from browser import html, document
 # Brython 的 input() 可以接受輸入提示字串, 跳出瀏覽器輸入表單後, 將輸入內容以字串取回
-user_input_temp = input("請輸入攝氏溫度值:")
+user_input_temp = input("請輸入:")
 # 接著列出 user_input_temp 變數的資料型別
 # 但是在頁面中 Brython 的 print() 將會顯示在 log 而非頁面
 print(type(user_input_temp))
@@ -1129,7 +1129,7 @@ brython({debug:1, pythonpath:['/static/','/downloads/py/']});
 &lt;script type="text/python"&gt;
 from browser import html, document
 # Brython 的 input() 可以接受輸入提示字串, 跳出瀏覽器輸入表單後, 將輸入內容以字串取回
-user_input_temp = input("請輸入攝氏溫度值:")
+user_input_temp = input("請輸入:")
 # 接著列出 user_input_temp 變數的資料型別
 # 但是在頁面中 Brython 的 print() 將會顯示在 log 而非頁面
 print(type(user_input_temp))
@@ -1146,7 +1146,7 @@ brython_div &lt;= user_input_temp
 &lt;script type="text/python"&gt;// &lt;![CDATA[
 from browser import html, document
 # Brython 的 input() 可以接受輸入提示字串, 跳出瀏覽器輸入表單後, 將輸入內容以字串取回
-#user_input_temp = input("請輸入攝氏溫度值:")
+#user_input_temp = input("請輸入:")
 # 接著列出 user_input_temp 變數的資料型別
 # 但是在頁面中 Brython 的 print() 將會顯示在 log 而非頁面
 #print(type(user_input_temp))
@@ -1158,7 +1158,7 @@ brython_div = document["brython_div"]
 # 接下來要設法按下按鈕之後才執行取使用者 input 的流程
 # 首先 comment 掉前面的 input() 與 print(), 同時蓋掉輸出, 並利用事件導向設計一個函式
 def get_input(env):
-    user_input_temp = input("請輸入攝氏溫度值:")
+    user_input_temp = input("請輸入:")
     brython_div &lt;= user_input_temp
 # 透過 Brython browser 模組中的 document 物件將 id="btn1" 的物件中的 bind() 方法
 # 讓使用者 click 後會經由瀏覽器中的 event 通知執行 get_input 函式
@@ -1170,7 +1170,7 @@ document["btn1"].bind('click', get_input)
 <script type="text/python">
 from browser import html, document
 # Brython 的 input() 可以接受輸入提示字串, 跳出瀏覽器輸入表單後, 將輸入內容以字串取回
-#user_input_temp = input("請輸入攝氏溫度值:")
+#user_input_temp = input("請輸入:")
 # 接著列出 user_input_temp 變數的資料型別
 # 但是在頁面中 Brython 的 print() 將會顯示在 log 而非頁面
 #print(type(user_input_temp))
@@ -1182,7 +1182,7 @@ brython_div = document["brython_div"]
 # 接下來要設法按下按鈕之後才執行取使用者 input 的流程
 # 首先 comment 掉前面的 input() 與 print(), 同時蓋掉輸出, 並利用事件導向設計一個函式
 def get_input(env):
-    user_input_temp = input("請輸入攝氏溫度值:")
+    user_input_temp = input("請輸入:")
     brython_div <= user_input_temp
 # 透過 Brython browser 模組中的 document 物件將 id="btn1" 的物件中的 bind() 方法
 # 讓使用者 click 後會經由瀏覽器中的 event 通知執行 get_input 函式
