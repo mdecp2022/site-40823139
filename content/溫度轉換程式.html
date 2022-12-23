@@ -142,7 +142,7 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">w13 << <a href='w13.html'>Previous</a> <a href='w14.html'>Next</a> >> w14<br /><h1>溫度轉換程式</h1>
-<p>程式說明:執行後可隨機取得甲班五個人的網站連結</p>
+<p>程式說明:輸入攝氏溫度後獲得華氏溫度</p>
 <p><button id="temp">temp</button></p>
 <p></p>
 <!-- 導入 brython 程式庫 -->
@@ -202,7 +202,7 @@ def run1():
     try:
         url = doc.query["src"]
     except:
-        url = "https://gist.githubusercontent.com/40823139/35d8a803f853777a609297f764c31c3a/raw/d0b58d45d1309588910fc3d90060dd21f99f5939/temp.py"
+        url = "https://gist.githubusercontent.com/40823139/35d8a803f853777a609297f764c31c3a/raw/18144485428f90aa21250fe459e7ca8f7cef4273/temp.py"
     prog = open(url).read()
 
     # 將程式載入編輯區
@@ -269,8 +269,7 @@ doc["add1to100"].bind('click', add)
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div1"></div>
 <!-- editor1 結束 --><hr/><!-- ########################################## -->
-<p></p>
-<br />w13 << <a href='w13.html'>Previous</a> <a href='w14.html'>Next</a> >> w14</div>
+<p></p><br />w13 << <a href='w13.html'>Previous</a> <a href='w14.html'>Next</a> >> w14</div>
         
     <!-- footer -->
       <div class="container">
