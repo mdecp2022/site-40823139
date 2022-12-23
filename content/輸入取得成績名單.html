@@ -141,9 +141,9 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">W10. << <a href='W10..html'>Previous</a> <a href='HW1.html'>Next</a> >> HW1<br /><h1>補充程式</h1>
-<p>程式說明:完成HW前須知的概念</p>
-<p><button id="compare">compare</button></p>
+    <div id="tipue_search_content">w16 << <a href='w16.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython<br /><h1>輸入取得成績名單</h1>
+<p>程式說明:執行後產生輸入(班級,url)獲得成績名單與缺考的button</p>
+<p><button id="score&amp;num">score&amp;num</button></p>
 <p></p>
 <!-- 導入 brython 程式庫 -->
 <p>
@@ -202,7 +202,7 @@ def run1():
     try:
         url = doc.query["src"]
     except:
-        url = "https://gist.githubusercontent.com/40823139/9f6c7a80c6a227d6483addb500833089/raw/358ad9ef6f30b8528fde5aa19e4fbdc76c7c38e1/compare.py"
+        url = "https://gist.githubusercontent.com/40823139/acf38f4f5de7bfdd20f6a361129fe393/raw/ed7361ce42faf9a6a558e823bf612fa774893be2/score&num"
     prog = open(url).read()
 
     # 將程式載入編輯區
@@ -269,8 +269,7 @@ doc["add1to100"].bind('click', add)
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div1"></div>
 <!-- editor1 結束 --><hr/><!-- ########################################## -->
-<p></p>
-<br />W10. << <a href='W10..html'>Previous</a> <a href='HW1.html'>Next</a> >> HW1</div>
+<p></p><br />w16 << <a href='w16.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
         
     <!-- footer -->
       <div class="container">
