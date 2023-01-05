@@ -1333,6 +1333,7 @@ doc["add1to100"].bind('click', add)
 <p></p>
 <h3>H2.</h3>
 <p>程式說明:綠色方塊從左上角向右行走至格線中點後, 轉而向下走到底, 接著向右走到底, 然後向上走至格線中點位置後, 向左走到底然後向上回到格線原始位置, 接著重複上述行走路線至使用者按下暫停鍵)</p>
+<p>註:重點可從107行開始關注</p>
 <div></div>
 <p><button id="rect2">rect2</button></p>
 <p></p>
@@ -1460,7 +1461,8 @@ doc["add1to100"].bind('click', add)
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div1"></div>
 <!-- editor1 結束 --><hr/><!-- ########################################## -->
-<p></p><h3>輸入取得成績名單</h3>
+<p></p>
+<h3>輸入取得成績名單</h3>
 <p>程式說明:執行後產生輸入(班級,url)獲得成績名單與缺考的button</p>
 <p><button id="score&amp;num">score&amp;num</button></p>
 <p></p>
@@ -1868,4 +1870,20 @@ doc["aitetris"].bind("click", aitetris.do)
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console2"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div2"></div>
-<hr/></div>
+<hr/>
+<h1>Program</h1>
+<h2>Sum</h2>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">num = [num for num in range(0,10)]
+# 利用for i in range()迴圈方式從0~9(不含尾數10)寫入list中
+print(sum(num))
+#利用sum()涵式對list進行加總</pre>
+<p></p><h2>網頁建立按鈕</h2>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#想建按鈕要從html改寫，因此要導入document&amp;html
+from browser import document as doc
+from browser import html
+
+brython_div = doc["brython_div1"]
+#創造button
+brython_div &lt;= html.BUTTON("按鈕", id="power")
+brython_div &lt;= html.BUTTON("按鈕2", id="power")</pre>
+</div>
